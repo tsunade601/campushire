@@ -1,0 +1,38 @@
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: campushire
+      MYSQL_USER: campus
+      MYSQL_PASSWORD: campus_secret
+      MYSQL_ROOT_PASSWORD: root_secret
+    ports: ["3306:3306"]
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD","mysqladmin","ping","-h","localhost","-u","campus","-pcampus_secret"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  backend:
+    build: ./backend
+    environment:
+      PORT: 4000
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: campushire
+      DB_USER: campus
+      DB_PASSWORD: campus_secret
+      JWT_SECRET: local-development-secret
+    depends_on:
+      mysql: {condition: service_healthy}
+    ports: ["4000:4000"]
+  frontend:
+    build: ./frontend
+    environment:
+      VITE_API_URL: ""
+    depends_on: [backend]
+    ports: ["5173:5173"]
+volumes:
+  mysql_data:
