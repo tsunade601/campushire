@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" width="100%" height="100%" style="background:#090d16; font-family:'Segoe UI', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="headerGradAmber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+    <linearGradient id="headerGradEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="40" fill="#f8fafc" font-size="22" font-weight="700" text-anchor="middle" letter-spacing="1">
+    CampusHire — Entity Relationship (ER) Relational Schema
+  </text>
+  <text x="600" y="65" fill="#94a3b8" font-size="13" text-anchor="middle">
+    MySQL 8.0 Normalized 3NF Schema with Foreign Keys, Cascades, and Constraints
+  </text>
+
+  <!-- USERS -->
+  <g transform="translate(50, 90)" filter="url(#shadow)">
+    <rect width="180" height="150" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect width="180" height="30" rx="8" fill="url(#headerGrad)"/>
+    <text x="90" y="20" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">USERS</text>
+    <text x="12" y="50" fill="#38bdf8" font-size="11" font-weight="600">PK  id: INT</text>
+    <text x="12" y="70" fill="#cbd5e1" font-size="11">email: VARCHAR(191) [UQ]</text>
+    <text x="12" y="90" fill="#cbd5e1" font-size="11">password_hash: VARCHAR</text>
+    <text x="12" y="110" fill="#cbd5e1" font-size="11">role: ENUM(student, admin...)</text>
+    <text x="12" y="130" fill="#cbd5e1" font-size="11">is_active: BOOLEAN</text>
+  </g>
+
+  <!-- DEPARTMENTS -->
+  <g transform="translate(280, 90)" filter="url(#shadow)">
+    <rect width="180" height="130" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect width="180" height="30" rx="8" fill="url(#headerGrad)"/>
+    <text x="90" y="20" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">DEPARTMENTS</text>
+    <text x="12" y="50" fill="#38bdf8" font-size="11" font-weight="600">PK  id: INT</text>
+    <text x="12" y="70" fill="#cbd5e1" font-size="11">code: VARCHAR(20) [UQ]</text>
+    <text x="12" y="90" fill="#cbd5e1" font-size="11">name: VARCHAR(150)</text>
+    <text x="12" y="110" fill="#cbd5e1" font-size="11">faculty_in_charge: VARCHAR</text>
+  </g>
+
+  <!-- STUDENTS -->
+  <g transform="translate(150, 290)" filter="url(#shadow)">
+    <rect width="200" height="200" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect width="200" height="30" rx="8" fill="url(#headerGrad)"/>
+    <text x="100" y="20" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">STUDENTS</text>
+    <text x="12" y="50" fill="#38bdf8" font-size="11" font-weight="600">PK  id: INT</text>
+    <text x="12" y="70" fill="#f59e0b" font-size="11">FK  user_id: INT [UQ]</text>
+    <text x="12" y="90" fill="#cbd5e1" font-size="11">roll_number: VARCHAR [UQ]</text>
+    <text x="12" y="110" fill="#cbd5e1" font-size="11">first_name, last_name</text>
+    <text x="12" y="130" fill="#f59e0b" font-size="11">FK  department_id: INT</text>
+    <text x="12" y="150" fill="#cbd5e1" font-size="11">cgpa: DECIMAL(3,2) [CHK]</text>
+    <text x="12" y="170" fill="#cbd5e1" font-size="11">batch_year, semester</text>
+    <text x="12" y="190" fill="#cbd5e1" font-size="11">resume_url, linkedin_url</text>
+  </g>
+
+  <!-- SKILLS -->
+  <g transform="translate(50, 560)" filter="url(#shadow)">
+    <rect width="180" height="120" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect width="180" height="30" rx="8" fill="url(#headerGradAmber)"/>
+    <text x="90" y="20" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">SKILLS</text>
+    <text x="12" y="50" fill="#38bdf8" font-size="11" font-weight="600">PK  id: INT</text>
+    <text x="12" y="70" fill="#cbd5e1" font-size="11">name: VARCHAR(100) [UQ]</text>
+    <text x="12" y="90" fill="#cbd5e1" font-size="11">category: ENUM(...)</text>
+    <text x="12" y="110" fill="#cbd5e1" font-size="11">description: VARCHAR</text>
+  </g>
+
+  <!-- STUDENT_SKILLS -->
+  <g transform="translate(280, 560)" filter="url(#shadow)">
+    <rect width="180" height="110" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect width="180" height="30" rx="8" fill="url(#headerGradAmber)"/>
+    <text x="90" y="20" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">STUDENT_SKILLS</text>
+    <text x="12" y="50" fill="#38bdf8" font-size="11" font-weight="600">PK/FK student_id: INT</text>
+    <text x="12" y="70" fill="#38bdf8" font-size="11" font-weight="600">PK/FK skill_id: INT</text>
+    <text x="12" y="90" fill="#cbd5e1" font-size="11">proficiency: ENUM(...)</text>
+  </g>
+
+  <!-- INDUSTRIES -->
+  <g transform="translate(980, 90)" filter="url(#shadow)">
+    <rect width="170" height="110" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect width="170" height="30" rx="8" fill="url(#headerGradEmerald)"/>
+    <text x="85" y="20" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">INDUSTRIES</text>
+    <text x="12" y="50" fill="#38bdf8" font-size="11" font-weight="600">PK  id: INT</text>
+    <text x="12" y="70" fill="#cbd5e1" font-size="11">name: VARCHAR [UQ]</text>
+    <text x="12" y="90" fill="#cbd5e1" font-size="11">description: TEXT</text>
+  </g>
+
+  <!-- COMPANIES -->
+  <g transform="translate(740, 90)" filter="url(#shadow)">
+    <rect width="190" height="180" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect width="190" height="30" rx="8" fill="url(#headerGradEmerald)"/>
+    <text x="95" y="20" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">COMPANIES</text>
+    <text x="12" y="50" fill="#38bdf8" font-size="11" font-weight="600">PK  id: INT</text>
+    <text x="12" y="70" fill="#f59e0b" font-size="11">FK  user_id: INT [UQ]</text>
+    <text x="12" y="90" fill="#cbd5e1" font-size="11">name: VARCHAR(150)</text>
+    <text x="12" y="110" fill="#f59e0b" font-size="11">FK  industry_id: INT</text>
+    <text x="12" y="130" fill="#cbd5e1" font-size="11">city, country, address</text>
+    <text x="12" y="150" fill="#cbd5e1" font-size="11">hr_name, hr_email, phone</text>
+    <text x="12" y="170" fill="#cbd5e1" font-size="11">status: ENUM(approved...)</text>
+  </g>
+
+  <!-- INTERNSHIPS -->
+  <g transform="translate(740, 320)" filter="url(#shadow)">
+    <rect width="190" height="200" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect width="190" height="30" rx="8" fill="url(#headerGradEmerald)"/>
+    <text x="95" y="20" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">INTERNSHIPS</text>
+    <text x="12" y="50" fill="#38bdf8" font-size="11" font-weight="600">PK  id: INT</text>
+    <text x="12" y="70" fill="#f59e0b" font-size="11">FK  company_id: INT</text>
+    <text x="12" y="90" fill="#cbd5e1" font-size="11">title: VARCHAR(200)</text>
+    <text x="12" y="110" fill="#cbd5e1" font-size="11">location, work_mode</text>
+    <text x="12" y="130" fill="#cbd5e1" font-size="11">stipend_amount, duration</text>
+    <text x="12" y="150" fill="#cbd5e1" font-size="11">deadline, start_date, end</text>
+    <text x="12" y="170" fill="#cbd5e1" font-size="11">openings: INT [CHK]</text>
+    <text x="12" y="190" fill="#cbd5e1" font-size="11">status: ENUM(Open...)</text>
+  </g>
+
+  <!-- INTERNSHIP_SKILLS -->
+  <g transform="translate(500, 560)" filter="url(#shadow)">
+    <rect width="180" height="110" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect width="180" height="30" rx="8" fill="url(#headerGradAmber)"/>
+    <text x="90" y="20" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">INTERNSHIP_SKILLS</text>
+    <text x="12" y="50" fill="#38bdf8" font-size="11" font-weight="600">PK/FK internship_id: INT</text>
+    <text x="12" y="70" fill="#38bdf8" font-size="11" font-weight="600">PK/FK skill_id: INT</text>
+    <text x="12" y="90" fill="#cbd5e1" font-size="11">is_required: BOOLEAN</text>
+  </g>
+
+  <!-- APPLICATIONS -->
+  <g transform="translate(440, 290)" filter="url(#shadow)">
+    <rect width="200" height="180" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect width="200" height="30" rx="8" fill="url(#headerGrad)"/>
+    <text x="100" y="20" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">APPLICATIONS</text>
+    <text x="12" y="50" fill="#38bdf8" font-size="11" font-weight="600">PK  id: INT</text>
+    <text x="12" y="70" fill="#f59e0b" font-size="11">FK  student_id: INT</text>
+    <text x="12" y="90" fill="#f59e0b" font-size="11">FK  internship_id: INT</text>
+    <text x="12" y="110" fill="#cbd5e1" font-size="11">UQ(student_id, internship_id)</text>
+    <text x="12" y="130" fill="#cbd5e1" font-size="11">status: ENUM(Applied, Offered...)</text>
+    <text x="12" y="150" fill="#cbd5e1" font-size="11">cover_letter, resume_url</text>
+    <text x="12" y="170" fill="#cbd5e1" font-size="11">applied_at: TIMESTAMP</text>
+  </g>
+
+  <!-- INTERVIEWS -->
+  <g transform="translate(440, 710)" filter="url(#shadow)">
+    <rect width="200" height="120" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect width="200" height="30" rx="8" fill="url(#headerGrad)"/>
+    <text x="100" y="20" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">INTERVIEWS</text>
+    <text x="12" y="50" fill="#38bdf8" font-size="11" font-weight="600">PK  id: INT</text>
+    <text x="12" y="70" fill="#f59e0b" font-size="11">FK  application_id: INT</text>
+    <text x="12" y="90" fill="#cbd5e1" font-size="11">round_number, round_type</text>
+    <text x="12" y="110" fill="#cbd5e1" font-size="11">scheduled_at, result, rating</text>
+  </g>
+
+  <!-- OFFERS -->
+  <g transform="translate(740, 560)" filter="url(#shadow)">
+    <rect width="190" height="140" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect width="190" height="30" rx="8" fill="url(#headerGrad)"/>
+    <text x="95" y="20" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">OFFERS</text>
+    <text x="12" y="50" fill="#38bdf8" font-size="11" font-weight="600">PK  id: INT</text>
+    <text x="12" y="70" fill="#f59e0b" font-size="11">FK  application_id: INT [UQ]</text>
+    <text x="12" y="90" fill="#cbd5e1" font-size="11">stipend_offered: DECIMAL</text>
+    <text x="12" y="110" fill="#cbd5e1" font-size="11">joining_date, valid_until</text>
+    <text x="12" y="130" fill="#cbd5e1" font-size="11">status: ENUM(Issued, Accepted...)</text>
+  </g>
+
+  <!-- INTERNSHIP_RECORDS -->
+  <g transform="translate(980, 560)" filter="url(#shadow)">
+    <rect width="180" height="140" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect width="180" height="30" rx="8" fill="url(#headerGrad)"/>
+    <text x="90" y="20" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">INTERNSHIP_RECORDS</text>
+    <text x="12" y="50" fill="#38bdf8" font-size="11" font-weight="600">PK  id: INT</text>
+    <text x="12" y="70" fill="#f59e0b" font-size="11">FK  offer_id: INT [UQ]</text>
+    <text x="12" y="90" fill="#f59e0b" font-size="11">FK  student_id, internship_id</text>
+    <text x="12" y="110" fill="#cbd5e1" font-size="11">official_start_date, end_date</text>
+    <text x="12" y="130" fill="#cbd5e1" font-size="11">status: ENUM(Active, Completed...)</text>
+  </g>
+
+  <!-- EVALUATIONS -->
+  <g transform="translate(980, 720)" filter="url(#shadow)">
+    <rect width="180" height="110" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect width="180" height="30" rx="8" fill="url(#headerGrad)"/>
+    <text x="90" y="20" fill="#fff" font-size="12" font-weight="700" text-anchor="middle">EVALUATIONS</text>
+    <text x="12" y="50" fill="#38bdf8" font-size="11" font-weight="600">PK  id: INT</text>
+    <text x="12" y="70" fill="#f59e0b" font-size="11">FK  record_id: INT [UQ]</text>
+    <text x="12" y="90" fill="#cbd5e1" font-size="11">technical, comm, punct, overall</text>
+    <text x="12" y="105" fill="#cbd5e1" font-size="11">ppo_offered: BOOLEAN</text>
+  </g>
+</svg>
