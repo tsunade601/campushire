@@ -278,7 +278,7 @@ CREATE TABLE offers (
 -- -----------------------------------------------------------------------------
 -- Table 13: INTERNSHIP_RECORDS (Tracked Active/Completed Internships)
 -- -----------------------------------------------------------------------------
-CREATE TABLE internship_records (\
+CREATE TABLE internship_records (
     id INT AUTO_INCREMENT PRIMARY KEY,
     offer_id INT NOT NULL UNIQUE,
     student_id INT NOT NULL,
