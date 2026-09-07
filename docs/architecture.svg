@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%" style="background:#0b1120; font-family:'Segoe UI', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="gradClient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="gradServer" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="gradDB" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="500" y="50" fill="#f8fafc" font-size="24" font-weight="700" text-anchor="middle" letter-spacing="1">
+    CampusHire — 3-Tier Enterprise Architecture
+  </text>
+  <text x="500" y="78" fill="#94a3b8" font-size="14" text-anchor="middle">
+    Client Presentation Layer ➔ Express REST API ➔ Normalized MySQL 8 System of Record
+  </text>
+
+  <!-- Tier 1: Client -->
+  <g transform="translate(60, 120)" filter="url(#shadow)">
+    <rect width="250" height="460" rx="16" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <rect width="250" height="50" rx="16" fill="url(#gradClient)"/>
+    <text x="125" y="32" fill="#ffffff" font-size="16" font-weight="700" text-anchor="middle">Presentation Tier (React)</text>
+    
+    <g transform="translate(20, 70)">
+      <rect width="210" height="50" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+      <text x="105" y="25" fill="#38bdf8" font-size="13" font-weight="600" text-anchor="middle">Student Portal</text>
+      <text x="105" y="42" fill="#94a3b8" font-size="11" text-anchor="middle">Search, Apply, Offers, History</text>
+    </g>
+    <g transform="translate(20, 135)">
+      <rect width="210" height="50" rx="8" fill="#0f172a" stroke="#818cf8" stroke-width="1"/>
+      <text x="105" y="25" fill="#818cf8" font-size="13" font-weight="600" text-anchor="middle">Admin Placement Cell</text>
+      <text x="105" y="42" fill="#94a3b8" font-size="11" text-anchor="middle">Cohorts, Recruiters, Analytics</text>
+    </g>
+    <g transform="translate(20, 200)">
+      <rect width="210" height="50" rx="8" fill="#0f172a" stroke="#a78bfa" stroke-width="1"/>
+      <text x="105" y="25" fill="#a78bfa" font-size="13" font-weight="600" text-anchor="middle">Company Recruiter</text>
+      <text x="105" y="42" fill="#94a3b8" font-size="11" text-anchor="middle">Postings, Candidates, Interviews</text>
+    </g>
+    <g transform="translate(20, 265)">
+      <rect width="210" height="80" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+      <text x="105" y="24" fill="#f1f5f9" font-size="12" font-weight="600" text-anchor="middle">Modern UI Stack</text>
+      <text x="105" y="42" fill="#94a3b8" font-size="11" text-anchor="middle">• Vite + React 18</text>
+      <text x="105" y="58" fill="#94a3b8" font-size="11" text-anchor="middle">• Tailwind CSS + Animations</text>
+      <text x="105" y="74" fill="#94a3b8" font-size="11" text-anchor="middle">• Responsive Navbar &amp; Charts</text>
+    </g>
+    <g transform="translate(20, 360)">
+      <rect width="210" height="70" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+      <text x="105" y="24" fill="#f1f5f9" font-size="12" font-weight="600" text-anchor="middle">State &amp; API Service</text>
+      <text x="105" y="42" fill="#94a3b8" font-size="11" text-anchor="middle">• React Context (Auth)</text>
+      <text x="105" y="58" fill="#94a3b8" font-size="11" text-anchor="middle">• Fetch / REST Client</text>
+    </g>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <g transform="translate(320, 320)">
+    <line x1="0" y1="0" x2="60" y2="0" stroke="#38bdf8" stroke-width="3" stroke-dasharray="6,4"/>
+    <polygon points="60,-5 72,0 60,5" fill="#38bdf8"/>
+    <text x="35" y="-12" fill="#38bdf8" font-size="11" text-anchor="middle" font-weight="600">REST / JSON</text>
+    <text x="35" y="20" fill="#64748b" font-size="10" text-anchor="middle">JWT Bearer</text>
+  </g>
+
+  <!-- Tier 2: Server -->
+  <g transform="translate(400, 120)" filter="url(#shadow)">
+    <rect width="250" height="460" rx="16" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <rect width="250" height="50" rx="16" fill="url(#gradServer)"/>
+    <text x="125" y="32" fill="#ffffff" font-size="16" font-weight="700" text-anchor="middle">Application Tier (Node/Express)</text>
+
+    <g transform="translate(20, 70)">
+      <rect width="210" height="50" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+      <text x="105" y="25" fill="#34d399" font-size="13" font-weight="600" text-anchor="middle">Security &amp; Auth</text>
+      <text x="105" y="42" fill="#94a3b8" font-size="11" text-anchor="middle">JWT Verification, Role Guard</text>
+    </g>
+    <g transform="translate(20, 135)">
+      <rect width="210" height="50" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+      <text x="105" y="25" fill="#34d399" font-size="13" font-weight="600" text-anchor="middle">REST Controllers</text>
+      <text x="105" y="42" fill="#94a3b8" font-size="11" text-anchor="middle">Students, Internships, Offers</text>
+    </g>
+    <g transform="translate(20, 200)">
+      <rect width="210" height="50" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+      <text x="105" y="25" fill="#34d399" font-size="13" font-weight="600" text-anchor="middle">Workflow Engine</text>
+      <text x="105" y="42" fill="#94a3b8" font-size="11" text-anchor="middle">ACID Transactions &amp; State Guards</text>
+    </g>
+    <g transform="translate(20, 265)">
+      <rect width="210" height="50" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1"/>
+      <text x="105" y="25" fill="#34d399" font-size="13" font-weight="600" text-anchor="middle">Validation Middleware</text>
+      <text x="105" y="42" fill="#94a3b8" font-size="11" text-anchor="middle">Schema Bounds &amp; Sanitization</text>
+    </g>
+    <g transform="translate(20, 330)">
+      <rect width="210" height="100" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+      <text x="105" y="24" fill="#f1f5f9" font-size="12" font-weight="600" text-anchor="middle">Data Access Layer</text>
+      <text x="105" y="44" fill="#94a3b8" font-size="11" text-anchor="middle">• mysql2 Connection Pool</text>
+      <text x="105" y="62" fill="#94a3b8" font-size="11" text-anchor="middle">• Parameterized Prepared Queries</text>
+      <text x="105" y="80" fill="#94a3b8" font-size="11" text-anchor="middle">• Zero Client SQL Injection</text>
+    </g>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <g transform="translate(660, 320)">
+    <line x1="0" y1="0" x2="60" y2="0" stroke="#f59e0b" stroke-width="3" stroke-dasharray="6,4"/>
+    <polygon points="60,-5 72,0 60,5" fill="#f59e0b"/>
+    <text x="35" y="-12" fill="#f59e0b" font-size="11" text-anchor="middle" font-weight="600">SQL Protocol</text>
+    <text x="35" y="20" fill="#64748b" font-size="10" text-anchor="middle">Port 3306</text>
+  </g>
+
+  <!-- Tier 3: Database -->
+  <g transform="translate(740, 120)" filter="url(#shadow)">
+    <rect width="200" height="460" rx="16" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <rect width="200" height="50" rx="16" fill="url(#gradDB)"/>
+    <text x="100" y="32" fill="#ffffff" font-size="16" font-weight="700" text-anchor="middle">Database Tier (MySQL 8)</text>
+
+    <g transform="translate(15, 70)">
+      <rect width="170" height="60" rx="8" fill="#0f172a" stroke="#fbbf24" stroke-width="1"/>
+      <text x="85" y="24" fill="#fbbf24" font-size="12" font-weight="600" text-anchor="middle">14 3NF Relations</text>
+      <text x="85" y="44" fill="#94a3b8" font-size="10" text-anchor="middle">Students, Postings, Apps, Offers</text>
+    </g>
+    <g transform="translate(15, 145)">
+      <rect width="170" height="60" rx="8" fill="#0f172a" stroke="#fbbf24" stroke-width="1"/>
+      <text x="85" y="24" fill="#fbbf24" font-size="12" font-weight="600" text-anchor="middle">Integrity Rules</text>
+      <text x="85" y="44" fill="#94a3b8" font-size="10" text-anchor="middle">PKs, FK Cascades, CHECKs</text>
+    </g>
+    <g transform="translate(15, 220)">
+      <rect width="170" height="60" rx="8" fill="#0f172a" stroke="#fbbf24" stroke-width="1"/>
+      <text x="85" y="24" fill="#fbbf24" font-size="12" font-weight="600" text-anchor="middle">B-Tree Indexes</text>
+      <text x="85" y="44" fill="#94a3b8" font-size="10" text-anchor="middle">Status, Deadline, Foreign Keys</text>
+    </g>
+    <g transform="translate(15, 295)">
+      <rect width="170" height="60" rx="8" fill="#0f172a" stroke="#fbbf24" stroke-width="1"/>
+      <text x="85" y="24" fill="#fbbf24" font-size="12" font-weight="600" text-anchor="middle">Reporting Views</text>
+      <text x="85" y="44" fill="#94a3b8" font-size="10" text-anchor="middle">6 Analytic Reporting Views</text>
+    </g>
+    <g transform="translate(15, 370)">
+      <rect width="170" height="60" rx="8" fill="#0f172a" stroke="#fbbf24" stroke-width="1"/>
+      <text x="85" y="24" fill="#fbbf24" font-size="12" font-weight="600" text-anchor="middle">20 DBMS Queries</text>
+      <text x="85" y="44" fill="#94a3b8" font-size="10" text-anchor="middle">Aggregates, Window Fns, Joins</text>
+    </g>
+  </g>
+
+  <!-- Footer note -->
+  <text x="500" y="615" fill="#64748b" font-size="12" text-anchor="middle">
+    Designed for strict separation of concerns: React never communicates directly with MySQL.
+  </text>
+</svg>
