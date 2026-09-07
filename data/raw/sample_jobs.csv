@@ -1,0 +1,6 @@
+Title,Company,Industry,Location,WorkMode,Stipend,SkillsRequired,DurationWeeks
+Software Engineering Intern,Nexus Cloud,Enterprise Software & Cloud,Bengaluru,Hybrid,65000,Python,SQL,Docker & Containers,12
+Frontend Engineering Intern,PixelCraft,Enterprise Software & Cloud,Remote,Remote,50000,JavaScript (ES6+),TypeScript,React.js,10
+Payments Infrastructure Intern,Stripe Platform,Fintech & Payment Systems,Mumbai,Hybrid,110000,Node.js & Express,SQL,System Design,14
+Hardware Verification Intern,Silicon Logic,Semiconductors & Hardware,Bengaluru,On-site,45000,C++,Verilog / VLSI Design,12
+Applied ML Research Intern,NeuroData Labs,Healthcare & Biotech Tech,Hyderabad,Hybrid,75000,Python,Machine Learning & Scikit-Learn,12
